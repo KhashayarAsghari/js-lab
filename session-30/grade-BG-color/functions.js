@@ -10,3 +10,30 @@ function bgChanger(){
         document.body.style.backgroundColor = "green";
     }
 }
+
+
+function countPositivesSumNegatives(input) {
+
+    debugger;
+    if(input == null || input == []){
+      let empty = [];
+      return empty;
+    }
+    
+    let countOfPositives = 0;
+    let sumOfNegatives = 0;
+    
+    for(let i = 0; i<input.length; i++){
+      if(input[i] < 0){
+        sumOfNegatives += input[i];
+      }else if(input[i] == 0){
+        
+      }else{
+        countOfPositives += 1;
+      }
+    }
+    
+    let resault = [countOfPositives, sumOfNegatives];
+    
+    return resault;
+  }
