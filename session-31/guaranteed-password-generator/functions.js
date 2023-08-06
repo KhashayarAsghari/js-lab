@@ -3,7 +3,7 @@ function passGenerator() {
     let upperCasePlace = 0;
     let lowerCasePlace = 0;
 
-    debugger;
+   
     while (
         numberPlace == upperCasePlace ||
         numberPlace == lowerCasePlace ||
