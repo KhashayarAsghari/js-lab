@@ -5,11 +5,11 @@ let cloud3 = document.querySelector("img.cloud3");
 let cloud4 = document.querySelector("img.cloud4");
 let cloud5 = document.querySelector("img.cloud5");
 
-let cloud1Style = cloud1.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite linear; animation-delay: ${randomNum(0, 4)}s;`;
-let cloud2Style = cloud2.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite linear; animation-delay: ${randomNum(0, 4)}s;`;
-let cloud3Style = cloud3.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite linear; animation-delay: ${randomNum(0, 4)}s;`;
-let cloud4Style = cloud4.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite linear; animation-delay: ${randomNum(0, 4)}s;`;
-let cloud5Style = cloud5.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite linear; animation-delay: ${randomNum(0, 4)}s;`;
+let cloud1Style = cloud1.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite ease; animation-delay: ${randomNum(0, 4)}s;`;
+let cloud2Style = cloud2.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite ease; animation-delay: ${randomNum(0, 4)}s;`;
+let cloud3Style = cloud3.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite ease; animation-delay: ${randomNum(0, 4)}s;`;
+let cloud4Style = cloud4.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite ease; animation-delay: ${randomNum(0, 4)}s;`;
+let cloud5Style = cloud5.style = `top: ${randomNum(25, 40)}%; left: ${randomNum(20, 60)}%; animation: clouds-move ${randomNum(10, 40)}s infinite ease; animation-delay: ${randomNum(0, 4)}s;`;
 
 function toggleTime() {
     console.log("test");
