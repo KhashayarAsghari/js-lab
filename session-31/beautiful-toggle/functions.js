@@ -17,9 +17,6 @@ function toggleTime() {
     
     let dayContainer = document.getElementById("day-container");
     let nightContainer = document.getElementById("night-container");
-    let sunImage = document.querySelector(".day-container > img");
-    let moonImage = document.querySelector(".night-container > img");
-
     let body = document.querySelector("body");
     let btn = document.querySelector("button");
 
