@@ -1,4 +1,5 @@
 let day = true;
+let rotateDeg = 0;
 let cloud1 = document.querySelector("img.cloud1");
 let cloud2 = document.querySelector("img.cloud2");
 let cloud3 = document.querySelector("img.cloud3");
@@ -21,16 +22,18 @@ function toggleTime() {
     let btn = document.querySelector("button");
 
     if (day == true) {
-        dayContainer.style = "transform: rotate(180deg); transition: 1s; animation-delay: 0.1s;";
-        nightContainer.style = "transform: rotate(180deg); transition: 1s; animation-delay: 0.1s;";
+        rotateDeg += 180;
+        dayContainer.style = `transform: rotate(${rotateDeg}deg); transition: 1s;`;
+        nightContainer.style = `transform: rotate(${rotateDeg}deg); transition: 1s;`;
         btn.style = "position: absolute;bottom: 20%;left: 50%;transform: translateX(-50%);border: none;outline: none;background-color: #bfd7ff;padding: 20px 30px;color: black; transition: 0.8s";
         body.style = `background-color: #575d69 ;transition: background-color .8s`;
         day = false;
         btn.textContent = "GO TO DAY!";
       
     } else {
-        dayContainer.style = "transform: rotate(0deg); transition: 1s; animation-delay: 0.1s;";
-        nightContainer.style = "transform: rotate(0deg); transition: 1s; animation-delay: 0.1s;";
+        rotateDeg += 180;
+        dayContainer.style = `transform: rotate(${rotateDeg}deg); transition: 1s;`;
+        nightContainer.style = `transform: rotate(${rotateDeg}deg); transition: 1s;`;
         let btnStyle = btn.style;
         body.style = `background-color: #bfd7ff ;transition: background-color .8s`;
         btn.textContent = "GO TO NIGHT";
