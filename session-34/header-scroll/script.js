@@ -1,5 +1,6 @@
 let header = document.querySelector(".header");
 let oldScroll = window.scrollY;
+
 function scrollHeader(){
     if(oldScroll > window.scrollY){
         header.style = ("position: sticky; top: 0; left: 0; height: 0;");
