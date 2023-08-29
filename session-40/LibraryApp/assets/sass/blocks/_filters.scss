@@ -1,0 +1,26 @@
+.filters {
+    max-width: 20%;
+    min-width: 300px;
+    background-color: $color-light;
+    @include dflex(flex-start, flex-start, column);
+    border: 2px solid $color-accent-light;
+    color: $color-accent-dark;
+    border-radius: $border-rad-xl;
+    position: sticky;
+    top: 0;
+    right: 0;
+    
+    &__item {
+        padding: $padding-m $padding-xl;
+        width: 100%;
+        @include dflex(space-between)
+    }
+
+    &__list {
+        transition: 0.5s;
+
+        &__hidden {
+            display: none;
+        }
+    }
+}

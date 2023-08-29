@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="data.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+    <section id="container-main" class="container-main">
+        <aside id="filters" class="filters">
+            <div class="filters__item">
+                <span class="filters__item__title">نویسنده</span>
+                <i class="fa-solid fa-chevron-down filters__item__arrow"></i>
+            </div>
+            <ul id="filters__list__author" class="filters__list filters__list__hidden">
+            </ul>
+            <div class="filters__item">
+                <span class="filters__item__title">تاریخ انتشار</span>
+                <i class="fa-solid fa-chevron-down filters__item__arrow"></i>
+            </div>
+            <ul id="filters__list__p-date" class="filters__list filters__list__hidden"></ul>
+            <div class="filters__item">
+                <span class="filters__item__title">زبان</span>
+                <i class="fa-solid fa-chevron-down filters__item__arrow"></i>
+            </div>
+            <ul id="filters__list__lang" class="filters__list filters__list__hidden"></ul>
+            <div class="filters__item">
+                <span class="filters__item__title">ژانر</span>
+                <i class="fa-solid fa-chevron-down filters__item__arrow"></i>
+            </div>
+            <ul id="filters__list__genre" class="filters__list filters__list__hidden"></ul>
+        </aside>
+
+
+        <section id="products" class="products">
+            <div class="product">
+                <img src="./assets/image/1.jpg" alt="product image" class="product__image">
+                <div class="product__desc">
+                    <h2 class="product__desc__title">خواجه تاجدار</h2>
+                    <div class="product__desc__details">
+                        <h3 class="product__desc__details__item">
+                            <span>اثر </span>
+                            ژان گور
+                        </h3>
+
+                        <h3 class="product__desc__details__item">
+                            2007
+                        </h3>
+
+                        <h3 class="product__desc__details__item">
+                            <span>زبان:‌ </span>
+                            فارسی
+                        </h3>
+                        <h3 class="product__desc__details__item">
+                            <span>ژانر:‌ </span>
+                            فلسفه
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
