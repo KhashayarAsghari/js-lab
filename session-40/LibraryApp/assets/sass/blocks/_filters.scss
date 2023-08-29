@@ -7,7 +7,7 @@
     color: $color-accent-dark;
     border-radius: $border-rad-xl;
     position: sticky;
-    top: 0;
+    top: 20px;
     right: 0;
     
     &__item {
@@ -16,11 +16,19 @@
         @include dflex(space-between)
     }
 
+    &__item--hidden + .filters__list {
+        display: none;
+    }
+
+    &__item--hidden > i {
+        transform: rotate(90deg);
+        transition: 0.5s;
+    }
+
     &__list {
         transition: 0.5s;
-
-        &__hidden {
-            display: none;
+        &> li {
+            list-style-type: none;
         }
     }
 }

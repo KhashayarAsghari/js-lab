@@ -4,9 +4,13 @@
     background-color: $color-lightest;
     border-radius: $border-rad-xl;
     overflow: hidden;
+    margin: 0px $margin-s;
+    margin-bottom: $margin-xxl;
 
     &__image {
         width: 100%;
+        height: 300px;
+        object-fit: cover;
     }
 
     &__desc {
