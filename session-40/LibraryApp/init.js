@@ -7,7 +7,8 @@ let filterListPDate = document.getElementById("filters__list__p-date");
 let filterListLang = document.getElementById("filters__list__lang");
 let filterListGenre = document.getElementById("filters__list__genre");
 let filterItems = document.querySelectorAll(".filters__item");
-
+let btnApplyFilters = document.getElementById("apply-filters");
+let btnClearFilters = document.getElementById("clear-filters");
 
 
 // initial filters
@@ -39,6 +40,7 @@ temp = uniqueAuthors.map(item => {
                 ${item}
             </li>`
 }).join();
+temp = temp.replaceAll(",", "");
 
 filterListAuthor.innerHTML = temp;
 
@@ -73,6 +75,7 @@ temp = uniqueLanguages.map(item => {
                 ${item}
             </li>`
 }).join();
+temp = temp.replaceAll(",", "")
 
 filterListLang.innerHTML = temp;
 
@@ -99,6 +102,7 @@ temp = uniqueGenres.map(item => {
             </li>`
 }).join();
 
+temp = temp.replaceAll(",", "");
 filterListGenre.innerHTML = temp;
 
 

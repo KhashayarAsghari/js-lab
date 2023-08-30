@@ -5,7 +5,6 @@
 // functions
 function openList(evt) {
     evt.target.classList.toggle("filters__item--hidden");
-    console.log(evt.target)
 }
 
 
@@ -45,9 +44,56 @@ function render(arr) {
     
 }
 
-
 render(BOOKS)
 
+
+function applyFilters() {
+    // selected authors
+    temp = filterListAuthor.childNodes;
+    let selectedAuthors = [];
+    for(let i=0; i< temp.length; i++){
+        if(temp[i].firstElementChild.checked){
+            selectedAuthors.push(temp[i].textContent.trim());
+        }
+    }
+    
+
+    // selected languages
+    temp = filterListLang.childNodes;
+    let selectedLanguages = [];
+    for(let i=0; i<temp.length; i++){
+        if(temp[i].firstElementChild.checked){
+            selectedLanguages.push(temp[i].textContent.trim());
+        }
+    }
+
+    // selected genres
+    temp = filterListGenre.childNodes;
+    let selectedGenres = [];
+    for(let i=0; i<temp.length; i++){
+        if(temp[i].firstElementChild.checked){
+            selectedGenres.push(temp[i].textContent.trim());
+        }
+    }
+
+
+    // filter BOOKS
+    let filteredBooks = BOOKS.map(item => {
+        for(let i = 0; i<BOOKS.length; i++){
+            for(let j=0; j<selectedAuthors.length; j++){
+                if(item.author == selectedAuthors[j]) return item;
+            }
+        }
+    })
+    for(let i=0; i<filteredBooks.length; i++){
+        if(filteredBooks[i] == undefined){ 
+            filteredBooks.splice(i,1);
+            i--;
+        };
+        
+    }
+    render(filteredBooks)
+}
 
 
 
@@ -56,6 +102,7 @@ render(BOOKS)
 // events
 
 for(let i=0; i<filterItems.length; i++){
-    filterItems[i].addEventListener("click", openList, true)
+    filterItems[i].addEventListener("click", openList)
 }
 
+btnApplyFilters.addEventListener("click", applyFilters);
