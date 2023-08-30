@@ -78,21 +78,60 @@ function applyFilters() {
 
 
     // filter BOOKS
-    let filteredBooks = BOOKS.map(item => {
+    let filteredAuthors = BOOKS.map(item => {
         for(let i = 0; i<BOOKS.length; i++){
             for(let j=0; j<selectedAuthors.length; j++){
                 if(item.author == selectedAuthors[j]) return item;
             }
         }
     })
-    for(let i=0; i<filteredBooks.length; i++){
-        if(filteredBooks[i] == undefined){ 
-            filteredBooks.splice(i,1);
+    for(let i=0; i<filteredAuthors.length; i++){
+        if(filteredAuthors[i] == undefined){ 
+            filteredAuthors.splice(i,1);
             i--;
         };
         
     }
+    
+    // filter languages
+    let filteredLanguages = BOOKS.map(item => {
+        for(let i = 0; i<BOOKS.length; i++){
+            for(let j=0; j<selectedLanguages.length; j++){
+                if(item.language == selectedLanguages[j]) return item;
+            }
+        }
+    })
+
+    for(let i=0; i<filteredLanguages.length; i++){
+        if(filteredLanguages[i] == undefined){
+            filteredLanguages.splice(i,1);
+            i--;
+        }
+    }
+
+
+    let filteredBooks = [];
+
+    for(let i=0; i<filteredAuthors.length; i++){
+        filteredBooks.push(filteredAuthors[i]);
+        for(let j=0; j<filteredLanguages.length; j++){
+            if(JSON.stringify(filteredAuthors[i]) == JSON.stringify(filteredLanguages[j])){
+                filteredLanguages.splice(j,1);
+                j--;
+            }
+        }
+    }
+
+    for(let i=0; i<filteredLanguages.length; i++){
+        filteredBooks.push(filteredLanguages[i]);
+    }
+
+
+
+    // filter genres
+    
     render(filteredBooks)
+    
 }
 
 
