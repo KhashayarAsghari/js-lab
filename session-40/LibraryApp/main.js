@@ -1,3 +1,4 @@
+const BASKET = [];
 
 
 
@@ -10,41 +11,64 @@ function openList(evt) {
 
 function render(arr) {
     temp = arr.map(item => {
+        const {id,title,author,published_date,language,genre,imgSrc} = item;
         return `
-                <div class="product">
-                    <img src="./assets/image/${item.imgSrc}" alt="product image" class="product__image">
+                <div id="${id}" class="product" >
+                    <img src="./assets/image/${imgSrc}" alt="product image" class="product__image">
                     <div class="product__desc">
-                        <h2 class="product__desc__title">${item.title}</h2>
+                        <h2 class="product__desc__title">${title}</h2>
                         <div class="product__desc__details">
                             <h3 class="product__desc__details__item">
                                 <span>اثر </span>
-                                ${item.author}
+                                ${author}
                             </h3>
 
                             <h3 class="product__desc__details__item">
-                                ${item.published_date.toString()}
+                                ${published_date.toString()}
                             </h3>
 
                             <h3 class="product__desc__details__item">
                                 <span>زبان:‌ </span>
-                                ${item.language}
+                                ${language}
                             </h3>
                             <h3 class="product__desc__details__item">
                                 <span>ژانر:‌ </span>
-                                ${item.genre}
+                                ${genre}
                             </h3>
                         </div>
+                        <div class="product__desc__basket">
+                        <i class="fa-solid fa-book-medical"></i>
+                        <h4>اضافه به سبد خرید</h4>
+                    </div>
                     </div>
                 </div>`
-    }).join();
+    }).join("");
 
-    temp = temp.replaceAll(",", "");
+    cartCounter.textContent = BASKET.length.toString();
 
     library.innerHTML = temp;
+
+    let addBook = document.querySelectorAll(".product__desc__basket");
+    addBook.forEach(element => {
+        element.addEventListener("click", addToBasket);
+    });
     
 }
 
-render(BOOKS)
+render(BOOKS);
+
+
+function addToBasket(evt){
+    temp = []
+    let targetId = (this.parentElement.parentElement.getAttribute("id"));
+    temp = BOOKS.filter(element => {
+        return element.id == targetId;
+    });
+    BASKET.push(...temp);
+    cartCounter.textContent = BASKET.length.toString();
+    // console.log(this.parentElement.parentElement)
+    // console.log(evt.target.parentElement.parentElement)
+}
 
 
 function applyFilters() {

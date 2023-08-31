@@ -9,6 +9,7 @@ let filterListGenre = document.getElementById("filters__list__genre");
 let filterItems = document.querySelectorAll(".filters__item");
 let btnApplyFilters = document.getElementById("apply-filters");
 let btnClearFilters = document.getElementById("clear-filters");
+let cartCounter = document.getElementById("cart-counter");
 
 
 // initial filters
@@ -39,8 +40,8 @@ temp = uniqueAuthors.map(item => {
                 <input type="checkbox">
                 ${item}
             </li>`
-}).join();
-temp = temp.replaceAll(",", "");
+}).join("");
+
 
 filterListAuthor.innerHTML = temp;
 
@@ -74,8 +75,7 @@ temp = uniqueLanguages.map(item => {
                 <input type="checkbox">
                 ${item}
             </li>`
-}).join();
-temp = temp.replaceAll(",", "")
+}).join("");
 
 filterListLang.innerHTML = temp;
 
@@ -100,9 +100,9 @@ temp = uniqueGenres.map(item => {
                 <input type="checkbox">
                 ${item}
             </li>`
-}).join();
+}).join("");
 
-temp = temp.replaceAll(",", "");
+
 filterListGenre.innerHTML = temp;
 
 
