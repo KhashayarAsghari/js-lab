@@ -11,6 +11,8 @@ let btnApplyFilters = document.getElementById("apply-filters");
 let btnClearFilters = document.getElementById("clear-filters");
 let cartCounter = document.getElementById("cart-counter");
 
+const BASKET = [];
+
 
 // initial filters
 

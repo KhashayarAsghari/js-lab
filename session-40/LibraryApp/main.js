@@ -1,4 +1,4 @@
-const BASKET = [];
+
 
 
 
@@ -66,6 +66,11 @@ function addToBasket(evt){
     });
     BASKET.push(...temp);
     cartCounter.textContent = BASKET.length.toString();
+
+    localStorage.setItem(
+        'myBasket',
+        JSON.stringify(BASKET),
+      );
     // console.log(this.parentElement.parentElement)
     // console.log(evt.target.parentElement.parentElement)
 }
